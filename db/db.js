@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const connnectDB = async () => {
 	try {
-		await mongoose.connect(process.env.DB_LOCAL_HOST_URI, {
+		await mongoose.connect(process.env.DB_ATLAS_URI, {
 			useNewUrlParser: true,
 			useCreateIndex: true,
 			useFindAndModify: false,
