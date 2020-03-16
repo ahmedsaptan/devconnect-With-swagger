@@ -1,0 +1,687 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Simple API",
+        "description": "A simple API to learn how to write OpenAPI Specification"
+    },
+    "schemes": [
+        "https"
+    ],
+    "host": "simple.api",
+    "basePath": "/",
+    "paths": {
+
+            "/me": {
+                "get": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/": {
+                "delete": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/user/:user_id": {
+                "get": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/experience": {
+                "put": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/experience/:exp_id": {
+                "delete": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/education": {
+                "put": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/education/:edu_id": {
+                "delete": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/github/:username": {
+                "get": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            }
+  ,
+            "/": {
+                "get": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/:post_id": {
+                "delete": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/like/:id": {
+                "put": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/unlike/:id": {
+                "put": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/comment/:id": {
+                "post": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/comment/:post_id/:comment_id": {
+                "delete": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            }
+   ,
+            "/": {
+                "get": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/:post_id": {
+                "delete": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/like/:id": {
+                "put": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/unlike/:id": {
+                "put": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/comment/:id": {
+                "post": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/comment/:post_id/:comment_id": {
+                "delete": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            }
+ ,
+            "/": {
+                "get": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/:post_id": {
+                "delete": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/like/:id": {
+                "put": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/unlike/:id": {
+                "put": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/comment/:id": {
+                "post": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/comment/:post_id/:comment_id": {
+                "delete": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            }
+       ,
+            "/": {
+                "get": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/:post_id": {
+                "delete": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/like/:id": {
+                "put": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/unlike/:id": {
+                "put": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/comment/:id": {
+                "post": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/comment/:post_id/:comment_id": {
+                "delete": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            }
+ ,
+ 
+            "/": {
+                "get": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/:post_id": {
+                "delete": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/like/:id": {
+                "put": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/unlike/:id": {
+                "put": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/comment/:id": {
+                "post": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/comment/:post_id/:comment_id": {
+                "delete": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+   
+     
+            "/me": {
+                "get": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/": {
+                "delete": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/user/:user_id": {
+                "get": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/experience": {
+                "put": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/experience/:exp_id": {
+                "delete": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/education": {
+                "put": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/education/:edu_id": {
+                "delete": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/github/:username": {
+                "get": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+
+            "/me": {
+                "get": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/": {
+                "delete": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/user/:user_id": {
+                "get": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/experience": {
+                "put": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/experience/:exp_id": {
+                "delete": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/education": {
+                "put": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/education/:edu_id": {
+                "delete": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/github/:username": {
+                "get": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+
+            "/me": {
+                "get": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/": {
+                "delete": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/user/:user_id": {
+                "get": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/experience": {
+                "put": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/experience/:exp_id": {
+                "delete": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/education": {
+                "put": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/education/:edu_id": {
+                "delete": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/github/:username": {
+                "get": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/me": {
+                "get": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/": {
+                "delete": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/user/:user_id": {
+                "get": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/experience": {
+                "put": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/experience/:exp_id": {
+                "delete": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/education": {
+                "put": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/education/:edu_id": {
+                "delete": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/github/:username": {
+                "get": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            }
+      ,
+            "/me": {
+                "get": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/": {
+                "delete": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/user/:user_id": {
+                "get": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/experience": {
+                "put": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/experience/:exp_id": {
+                "delete": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/education": {
+                "put": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/education/:edu_id": {
+                "delete": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/github/:username": {
+                "get": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            }
+  ,
+            "/me": {
+                "get": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/": {
+                "delete": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/user/:user_id": {
+                "get": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/experience": {
+                "put": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/experience/:exp_id": {
+                "delete": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/education": {
+                "put": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/education/:edu_id": {
+                "delete": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/github/:username": {
+                "get": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            }
+      ,
+            "/me": {
+                "get": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/": {
+                "delete": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/user/:user_id": {
+                "get": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/experience": {
+                "put": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/experience/:exp_id": {
+                "delete": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/education": {
+                "put": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/education/:edu_id": {
+                "delete": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            },
+            "/github/:username": {
+                "get": {
+                    "responses": {
+                        "200": {}
+                    }
+                }
+            }
+        }
+    }

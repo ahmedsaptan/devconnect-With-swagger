@@ -4,6 +4,9 @@ const morgan = require('morgan');
 const helmet = require('helmet');
 const swaggerUi = require('swagger-ui-express');
 
+
+
+
 const usersRouter = require('./routes/api/users');
 const authRouter = require('./routes/api/auth');
 const profileRouter = require('./routes/api/profile');
@@ -33,7 +36,7 @@ const objs = {
       "https"
   ],
   "host": "simple.api",
-  "basePath": "/openapi101",
+  "basePath": "/",
   "paths": {
       "/persons": {
           "get": {
@@ -64,36 +67,61 @@ const objs = {
       }
   }
 }
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(objs));
+
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(require("./myjsonfile.json")));
+
+
+// paths = {}
+// app._router.stack.forEach(layer => {
+//     let newPath = {}
+//     if (layer.handle.stack) {
+//         layer.handle.stack.forEach(R => {
+//             paths[R.route.path] = {}
+//             newPath[R.route.path] = {};
+//             let method = null;
+//             if(R.route.methods['post'] === true) {
+//                 method = "post"
+//             } else if(R.route.methods['get'] === true) {
+//                 method = "get"
+//             }else if(R.route.methods['put'] === true) {
+//                 method = "put"
+//             }else if(R.route.methods['delete'] === true){
+//                 method = "delete"
+//             }
+//             newPath[R.route.path][method] = {};
+//             newPath[R.route.path][method]['responses'] = {}
+//             newPath[R.route.path][method]['responses']["200"] = {}
+//             console.log(R.route.path)
+//             console.log(R.route.methods)
+//             paths[R.route.path] = newPath
+//             console.log(JSON.stringify(newPath, null, 4))
+//             console.log("------------------------------------------------------");
+//         })
+//     }
+//     // console.log(newPath)
+//     // objs['paths'] = newPath;
+//     // console.log(objs)
+// });
+
+// objs['paths'] = paths;
+// const  fs = require('fs');
+// fs.writeFile('myjsonfile.json', JSON.stringify(objs, null, 4), 'utf8' ,(err) => {
+//     console.log("done")
+// });
+
+
+
+const m2s = require('mongoose-to-swagger');
+const User = require("./models/User");
+const Post = require("./models/Post");
+const Profile = require("./models/Profile");
+
+// console.log(m2s(User));
+// console.log(m2s(Post));
+// console.log(m2s(Profile))
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
 	console.log(`Server is start at port : ${PORT}`);
 });
-
-// const genSwaggerJson = () => {
-//   const routes = [];
-
-//    .forEach(middleware => {
-//     if (middleware.route) {
-//       routes.push(
-//         `${Object.keys(middleware.route.methods)} -> ${middleware.route.path}`
-//       );
-//     }
-//   });
-
-//   console.log(JSON.stringify(routes, null, 2));
-// };
-
-// genSwaggerJson();
-
-console.log('*******************************************');
-app._router.stack.forEach(layer => {
-	if (layer.handle.stack) {
-		console.log(layer.handle.stack[0].route);
-		console.log(layer.handle.stack.length);
-		console.log('---------------------');
-	}
-});
-
-console.log('**********************************************');
