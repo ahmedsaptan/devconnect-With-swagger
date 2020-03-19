@@ -1,0 +1,1190 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Simple API",
+        "description": "A simple API to learn how to write OpenAPI Specification"
+    },
+    "schemes": [
+        "http"
+    ],
+    "host": "localhost:5000",
+    "basePath": "/",
+    "paths": {
+        "/api/users/": {
+            "post": {
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Body Object",
+                        "required": false,
+                        "schema": {
+                            "title": "User",
+                            "required": [
+                                "name",
+                                "email",
+                                "password"
+                            ],
+                            "properties": {
+                                "name": {
+                                    "type": "string"
+                                },
+                                "email": {
+                                    "type": "string"
+                                },
+                                "password": {
+                                    "type": "string"
+                                },
+                                "avatar": {
+                                    "type": "string"
+                                },
+                                "date": {
+                                    "type": "string",
+                                    "format": "date-time"
+                                },
+                                "_id": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/posts/": {
+            "post": {
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Body Object",
+                        "required": false,
+                        "schema": {
+                            "title": "Post",
+                            "required": [
+                                "text"
+                            ],
+                            "properties": {
+                                "user": {
+                                    "type": "string"
+                                },
+                                "text": {
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "type": "string"
+                                },
+                                "avatar": {
+                                    "type": "string"
+                                },
+                                "likes": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "user": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": []
+                                    }
+                                },
+                                "comments": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "user": {
+                                                "type": "string"
+                                            },
+                                            "text": {
+                                                "type": "string"
+                                            },
+                                            "avatar": {
+                                                "type": "string"
+                                            },
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "date": {
+                                                "type": "string",
+                                                "format": "date-time"
+                                            }
+                                        },
+                                        "required": [
+                                            "text"
+                                        ]
+                                    }
+                                },
+                                "date": {
+                                    "type": "string",
+                                    "format": "date-time"
+                                },
+                                "_id": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            },
+            "get": {
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "title": "Post",
+                                "required": [
+                                    "text"
+                                ],
+                                "properties": {
+                                    "user": {
+                                        "type": "string"
+                                    },
+                                    "text": {
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "avatar": {
+                                        "type": "string"
+                                    },
+                                    "likes": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "user": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": []
+                                        }
+                                    },
+                                    "comments": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "user": {
+                                                    "type": "string"
+                                                },
+                                                "text": {
+                                                    "type": "string"
+                                                },
+                                                "avatar": {
+                                                    "type": "string"
+                                                },
+                                                "name": {
+                                                    "type": "string"
+                                                },
+                                                "date": {
+                                                    "type": "string",
+                                                    "format": "date-time"
+                                                }
+                                            },
+                                            "required": [
+                                                "text"
+                                            ]
+                                        }
+                                    },
+                                    "date": {
+                                        "type": "string",
+                                        "format": "date-time"
+                                    },
+                                    "_id": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/posts/{post_id}/": {
+            "get": {
+                "parameters": [
+                    {
+                        "name": "post_id",
+                        "in": "path",
+                        "description": "search string",
+                        "required": true,
+                        "type": "string"
+                    }
+                ]
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "name": "post_id",
+                        "in": "path",
+                        "description": "search string",
+                        "required": true,
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        "/api/posts/like/{id}/": {
+            "put": {
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "search string",
+                        "required": true,
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        "/api/posts/unlike/{id}/": {
+            "put": {
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "search string",
+                        "required": true,
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        "/api/posts/comment/{id}/": {
+            "post": {
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "search string",
+                        "required": true,
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        "/api/posts/comment/{post_id}/{comment_id}/": {
+            "delete": {
+                "parameters": [
+                    {
+                        "name": "post_id",
+                        "in": "path",
+                        "description": "search string",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "comment_id",
+                        "in": "path",
+                        "description": "search string",
+                        "required": true,
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        "/api/auth/": {
+            "get": {
+                "parameters": []
+            },
+            "post": {
+                "parameters": []
+            }
+        },
+        "/api/profile/me/": {
+            "get": {
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "title": "Profile",
+                            "required": [
+                                "status",
+                                "skills"
+                            ],
+                            "properties": {
+                                "user": {
+                                    "type": "string"
+                                },
+                                "company": {
+                                    "type": "string"
+                                },
+                                "website": {
+                                    "type": "string"
+                                },
+                                "location": {
+                                    "type": "string"
+                                },
+                                "status": {
+                                    "type": "string"
+                                },
+                                "skills": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "bio": {
+                                    "type": "string"
+                                },
+                                "githubusername": {
+                                    "type": "string"
+                                },
+                                "experience": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "description": {},
+                                        "properties": {
+                                            "title": {
+                                                "type": "string"
+                                            },
+                                            "company": {
+                                                "type": "string"
+                                            },
+                                            "location": {
+                                                "type": "string"
+                                            },
+                                            "from": {
+                                                "type": "string",
+                                                "format": "date-time"
+                                            },
+                                            "to": {
+                                                "type": "string",
+                                                "format": "date-time"
+                                            },
+                                            "current": {
+                                                "type": "boolean"
+                                            },
+                                            "description": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "title",
+                                            "company",
+                                            "from"
+                                        ]
+                                    }
+                                },
+                                "education": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "description": {},
+                                        "properties": {
+                                            "school": {
+                                                "type": "string"
+                                            },
+                                            "degree": {
+                                                "type": "string"
+                                            },
+                                            "fieldofstudy": {
+                                                "type": "string"
+                                            },
+                                            "from": {
+                                                "type": "string",
+                                                "format": "date-time"
+                                            },
+                                            "to": {
+                                                "type": "string",
+                                                "format": "date-time"
+                                            },
+                                            "current": {
+                                                "type": "boolean"
+                                            },
+                                            "description": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "school",
+                                            "degree",
+                                            "fieldofstudy",
+                                            "from"
+                                        ]
+                                    }
+                                },
+                                "social": {
+                                    "type": "object",
+                                    "properties": {
+                                        "youtube": {
+                                            "type": "string"
+                                        },
+                                        "twitter": {
+                                            "type": "string"
+                                        },
+                                        "facebook": {
+                                            "type": "string"
+                                        },
+                                        "linkedin": {
+                                            "type": "string"
+                                        },
+                                        "instagram": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "date": {
+                                    "type": "string",
+                                    "format": "date-time"
+                                },
+                                "_id": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/profile/": {
+            "post": {
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Body Object",
+                        "required": false,
+                        "schema": {
+                            "title": "Profile",
+                            "required": [
+                                "status",
+                                "skills"
+                            ],
+                            "properties": {
+                                "user": {
+                                    "type": "string"
+                                },
+                                "company": {
+                                    "type": "string"
+                                },
+                                "website": {
+                                    "type": "string"
+                                },
+                                "location": {
+                                    "type": "string"
+                                },
+                                "status": {
+                                    "type": "string"
+                                },
+                                "skills": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "bio": {
+                                    "type": "string"
+                                },
+                                "githubusername": {
+                                    "type": "string"
+                                },
+                                "experience": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "description": {},
+                                        "properties": {
+                                            "title": {
+                                                "type": "string"
+                                            },
+                                            "company": {
+                                                "type": "string"
+                                            },
+                                            "location": {
+                                                "type": "string"
+                                            },
+                                            "from": {
+                                                "type": "string",
+                                                "format": "date-time"
+                                            },
+                                            "to": {
+                                                "type": "string",
+                                                "format": "date-time"
+                                            },
+                                            "current": {
+                                                "type": "boolean"
+                                            },
+                                            "description": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "title",
+                                            "company",
+                                            "from"
+                                        ]
+                                    }
+                                },
+                                "education": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "description": {},
+                                        "properties": {
+                                            "school": {
+                                                "type": "string"
+                                            },
+                                            "degree": {
+                                                "type": "string"
+                                            },
+                                            "fieldofstudy": {
+                                                "type": "string"
+                                            },
+                                            "from": {
+                                                "type": "string",
+                                                "format": "date-time"
+                                            },
+                                            "to": {
+                                                "type": "string",
+                                                "format": "date-time"
+                                            },
+                                            "current": {
+                                                "type": "boolean"
+                                            },
+                                            "description": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "school",
+                                            "degree",
+                                            "fieldofstudy",
+                                            "from"
+                                        ]
+                                    }
+                                },
+                                "social": {
+                                    "type": "object",
+                                    "properties": {
+                                        "youtube": {
+                                            "type": "string"
+                                        },
+                                        "twitter": {
+                                            "type": "string"
+                                        },
+                                        "facebook": {
+                                            "type": "string"
+                                        },
+                                        "linkedin": {
+                                            "type": "string"
+                                        },
+                                        "instagram": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "date": {
+                                    "type": "string",
+                                    "format": "date-time"
+                                },
+                                "_id": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            },
+            "get": {
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "title": "Profile",
+                            "required": [
+                                "status",
+                                "skills"
+                            ],
+                            "properties": {
+                                "user": {
+                                    "type": "string"
+                                },
+                                "company": {
+                                    "type": "string"
+                                },
+                                "website": {
+                                    "type": "string"
+                                },
+                                "location": {
+                                    "type": "string"
+                                },
+                                "status": {
+                                    "type": "string"
+                                },
+                                "skills": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "bio": {
+                                    "type": "string"
+                                },
+                                "githubusername": {
+                                    "type": "string"
+                                },
+                                "experience": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "description": {},
+                                        "properties": {
+                                            "title": {
+                                                "type": "string"
+                                            },
+                                            "company": {
+                                                "type": "string"
+                                            },
+                                            "location": {
+                                                "type": "string"
+                                            },
+                                            "from": {
+                                                "type": "string",
+                                                "format": "date-time"
+                                            },
+                                            "to": {
+                                                "type": "string",
+                                                "format": "date-time"
+                                            },
+                                            "current": {
+                                                "type": "boolean"
+                                            },
+                                            "description": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "title",
+                                            "company",
+                                            "from"
+                                        ]
+                                    }
+                                },
+                                "education": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "description": {},
+                                        "properties": {
+                                            "school": {
+                                                "type": "string"
+                                            },
+                                            "degree": {
+                                                "type": "string"
+                                            },
+                                            "fieldofstudy": {
+                                                "type": "string"
+                                            },
+                                            "from": {
+                                                "type": "string",
+                                                "format": "date-time"
+                                            },
+                                            "to": {
+                                                "type": "string",
+                                                "format": "date-time"
+                                            },
+                                            "current": {
+                                                "type": "boolean"
+                                            },
+                                            "description": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "school",
+                                            "degree",
+                                            "fieldofstudy",
+                                            "from"
+                                        ]
+                                    }
+                                },
+                                "social": {
+                                    "type": "object",
+                                    "properties": {
+                                        "youtube": {
+                                            "type": "string"
+                                        },
+                                        "twitter": {
+                                            "type": "string"
+                                        },
+                                        "facebook": {
+                                            "type": "string"
+                                        },
+                                        "linkedin": {
+                                            "type": "string"
+                                        },
+                                        "instagram": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "date": {
+                                    "type": "string",
+                                    "format": "date-time"
+                                },
+                                "_id": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "parameters": []
+            }
+        },
+        "/api/profile/user/{user_id}/": {
+            "get": {
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "description": "search string",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "title": "Profile",
+                            "required": [
+                                "status",
+                                "skills"
+                            ],
+                            "properties": {
+                                "user": {
+                                    "type": "string"
+                                },
+                                "company": {
+                                    "type": "string"
+                                },
+                                "website": {
+                                    "type": "string"
+                                },
+                                "location": {
+                                    "type": "string"
+                                },
+                                "status": {
+                                    "type": "string"
+                                },
+                                "skills": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "bio": {
+                                    "type": "string"
+                                },
+                                "githubusername": {
+                                    "type": "string"
+                                },
+                                "experience": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "description": {},
+                                        "properties": {
+                                            "title": {
+                                                "type": "string"
+                                            },
+                                            "company": {
+                                                "type": "string"
+                                            },
+                                            "location": {
+                                                "type": "string"
+                                            },
+                                            "from": {
+                                                "type": "string",
+                                                "format": "date-time"
+                                            },
+                                            "to": {
+                                                "type": "string",
+                                                "format": "date-time"
+                                            },
+                                            "current": {
+                                                "type": "boolean"
+                                            },
+                                            "description": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "title",
+                                            "company",
+                                            "from"
+                                        ]
+                                    }
+                                },
+                                "education": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "description": {},
+                                        "properties": {
+                                            "school": {
+                                                "type": "string"
+                                            },
+                                            "degree": {
+                                                "type": "string"
+                                            },
+                                            "fieldofstudy": {
+                                                "type": "string"
+                                            },
+                                            "from": {
+                                                "type": "string",
+                                                "format": "date-time"
+                                            },
+                                            "to": {
+                                                "type": "string",
+                                                "format": "date-time"
+                                            },
+                                            "current": {
+                                                "type": "boolean"
+                                            },
+                                            "description": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "school",
+                                            "degree",
+                                            "fieldofstudy",
+                                            "from"
+                                        ]
+                                    }
+                                },
+                                "social": {
+                                    "type": "object",
+                                    "properties": {
+                                        "youtube": {
+                                            "type": "string"
+                                        },
+                                        "twitter": {
+                                            "type": "string"
+                                        },
+                                        "facebook": {
+                                            "type": "string"
+                                        },
+                                        "linkedin": {
+                                            "type": "string"
+                                        },
+                                        "instagram": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "date": {
+                                    "type": "string",
+                                    "format": "date-time"
+                                },
+                                "_id": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/profile/experience/": {
+            "put": {
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Body Object",
+                        "required": false,
+                        "schema": {
+                            "type": "object",
+                            "description": {},
+                            "properties": {
+                                "title": {
+                                    "type": "string"
+                                },
+                                "company": {
+                                    "type": "string"
+                                },
+                                "location": {
+                                    "type": "string"
+                                },
+                                "from": {
+                                    "type": "string",
+                                    "format": "date-time"
+                                },
+                                "to": {
+                                    "type": "string",
+                                    "format": "date-time"
+                                },
+                                "current": {
+                                    "type": "boolean"
+                                },
+                                "description": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "title",
+                                "company",
+                                "from"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "/api/profile/experience/{exp_id}/": {
+            "delete": {
+                "parameters": [
+                    {
+                        "name": "exp_id",
+                        "in": "path",
+                        "description": "search string",
+                        "required": true,
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        "/api/profile/education/": {
+            "put": {
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Body Object",
+                        "required": false,
+                        "schema": {
+                            "type": "object",
+                            "description": {},
+                            "properties": {
+                                "school": {
+                                    "type": "string"
+                                },
+                                "degree": {
+                                    "type": "string"
+                                },
+                                "fieldofstudy": {
+                                    "type": "string"
+                                },
+                                "from": {
+                                    "type": "string",
+                                    "format": "date-time"
+                                },
+                                "to": {
+                                    "type": "string",
+                                    "format": "date-time"
+                                },
+                                "current": {
+                                    "type": "boolean"
+                                },
+                                "description": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "school",
+                                "degree",
+                                "fieldofstudy",
+                                "from"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "/api/profile/education/{edu_id}/": {
+            "delete": {
+                "parameters": [
+                    {
+                        "name": "edu_id",
+                        "in": "path",
+                        "description": "search string",
+                        "required": true,
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        "/api/profile/github/{username}/": {
+            "get": {
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "description": "search string",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "title": "Profile",
+                            "required": [
+                                "status",
+                                "skills"
+                            ],
+                            "properties": {
+                                "user": {
+                                    "type": "string"
+                                },
+                                "company": {
+                                    "type": "string"
+                                },
+                                "website": {
+                                    "type": "string"
+                                },
+                                "location": {
+                                    "type": "string"
+                                },
+                                "status": {
+                                    "type": "string"
+                                },
+                                "skills": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "bio": {
+                                    "type": "string"
+                                },
+                                "githubusername": {
+                                    "type": "string"
+                                },
+                                "experience": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "description": {},
+                                        "properties": {
+                                            "title": {
+                                                "type": "string"
+                                            },
+                                            "company": {
+                                                "type": "string"
+                                            },
+                                            "location": {
+                                                "type": "string"
+                                            },
+                                            "from": {
+                                                "type": "string",
+                                                "format": "date-time"
+                                            },
+                                            "to": {
+                                                "type": "string",
+                                                "format": "date-time"
+                                            },
+                                            "current": {
+                                                "type": "boolean"
+                                            },
+                                            "description": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "title",
+                                            "company",
+                                            "from"
+                                        ]
+                                    }
+                                },
+                                "education": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "description": {},
+                                        "properties": {
+                                            "school": {
+                                                "type": "string"
+                                            },
+                                            "degree": {
+                                                "type": "string"
+                                            },
+                                            "fieldofstudy": {
+                                                "type": "string"
+                                            },
+                                            "from": {
+                                                "type": "string",
+                                                "format": "date-time"
+                                            },
+                                            "to": {
+                                                "type": "string",
+                                                "format": "date-time"
+                                            },
+                                            "current": {
+                                                "type": "boolean"
+                                            },
+                                            "description": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "school",
+                                            "degree",
+                                            "fieldofstudy",
+                                            "from"
+                                        ]
+                                    }
+                                },
+                                "social": {
+                                    "type": "object",
+                                    "properties": {
+                                        "youtube": {
+                                            "type": "string"
+                                        },
+                                        "twitter": {
+                                            "type": "string"
+                                        },
+                                        "facebook": {
+                                            "type": "string"
+                                        },
+                                        "linkedin": {
+                                            "type": "string"
+                                        },
+                                        "instagram": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "date": {
+                                    "type": "string",
+                                    "format": "date-time"
+                                },
+                                "_id": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

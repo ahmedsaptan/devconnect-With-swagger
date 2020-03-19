@@ -5,6 +5,7 @@ const Post = require('../../models/Post');
 const User = require('../../models/User');
 const Profile = require('../../models/Profile');
 
+
 router.post(
 	'/',
 	[auth, check('text', 'Text is required').notEmpty()],

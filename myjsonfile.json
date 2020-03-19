@@ -1,687 +1,172 @@
 {
-    "swagger": "2.0",
-    "info": {
-        "version": "1.0.0",
-        "title": "Simple API",
-        "description": "A simple API to learn how to write OpenAPI Specification"
-    },
-    "schemes": [
-        "https"
-    ],
-    "host": "simple.api",
-    "basePath": "/",
-    "paths": {
-
-            "/me": {
-                "get": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/": {
-                "delete": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/user/:user_id": {
-                "get": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/experience": {
-                "put": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/experience/:exp_id": {
-                "delete": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/education": {
-                "put": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/education/:edu_id": {
-                "delete": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/github/:username": {
-                "get": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            }
-  ,
-            "/": {
-                "get": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/:post_id": {
-                "delete": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/like/:id": {
-                "put": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/unlike/:id": {
-                "put": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/comment/:id": {
-                "post": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/comment/:post_id/:comment_id": {
-                "delete": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            }
-   ,
-            "/": {
-                "get": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/:post_id": {
-                "delete": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/like/:id": {
-                "put": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/unlike/:id": {
-                "put": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/comment/:id": {
-                "post": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/comment/:post_id/:comment_id": {
-                "delete": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            }
- ,
-            "/": {
-                "get": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/:post_id": {
-                "delete": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/like/:id": {
-                "put": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/unlike/:id": {
-                "put": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/comment/:id": {
-                "post": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/comment/:post_id/:comment_id": {
-                "delete": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            }
-       ,
-            "/": {
-                "get": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/:post_id": {
-                "delete": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/like/:id": {
-                "put": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/unlike/:id": {
-                "put": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/comment/:id": {
-                "post": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/comment/:post_id/:comment_id": {
-                "delete": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            }
- ,
- 
-            "/": {
-                "get": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/:post_id": {
-                "delete": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/like/:id": {
-                "put": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/unlike/:id": {
-                "put": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/comment/:id": {
-                "post": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/comment/:post_id/:comment_id": {
-                "delete": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-   
-     
-            "/me": {
-                "get": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/": {
-                "delete": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/user/:user_id": {
-                "get": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/experience": {
-                "put": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/experience/:exp_id": {
-                "delete": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/education": {
-                "put": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/education/:edu_id": {
-                "delete": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/github/:username": {
-                "get": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-
-            "/me": {
-                "get": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/": {
-                "delete": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/user/:user_id": {
-                "get": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/experience": {
-                "put": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/experience/:exp_id": {
-                "delete": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/education": {
-                "put": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/education/:edu_id": {
-                "delete": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/github/:username": {
-                "get": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-
-            "/me": {
-                "get": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/": {
-                "delete": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/user/:user_id": {
-                "get": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/experience": {
-                "put": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/experience/:exp_id": {
-                "delete": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/education": {
-                "put": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/education/:edu_id": {
-                "delete": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/github/:username": {
-                "get": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/me": {
-                "get": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/": {
-                "delete": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/user/:user_id": {
-                "get": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/experience": {
-                "put": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/experience/:exp_id": {
-                "delete": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/education": {
-                "put": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/education/:edu_id": {
-                "delete": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/github/:username": {
-                "get": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            }
-      ,
-            "/me": {
-                "get": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/": {
-                "delete": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/user/:user_id": {
-                "get": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/experience": {
-                "put": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/experience/:exp_id": {
-                "delete": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/education": {
-                "put": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/education/:edu_id": {
-                "delete": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/github/:username": {
-                "get": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            }
-  ,
-            "/me": {
-                "get": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/": {
-                "delete": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/user/:user_id": {
-                "get": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/experience": {
-                "put": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/experience/:exp_id": {
-                "delete": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/education": {
-                "put": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/education/:edu_id": {
-                "delete": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/github/:username": {
-                "get": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            }
-      ,
-            "/me": {
-                "get": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/": {
-                "delete": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/user/:user_id": {
-                "get": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/experience": {
-                "put": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/experience/:exp_id": {
-                "delete": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/education": {
-                "put": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/education/:edu_id": {
-                "delete": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            },
-            "/github/:username": {
-                "get": {
-                    "responses": {
-                        "200": {}
-                    }
-                }
-            }
-        }
-    }
+	"swagger": "2.0",
+	"info": {
+		"version": "1.0.0",
+		"title": "Simple API",
+		"description": "A simple API to learn how to write OpenAPI Specification"
+	},
+	"schemes": ["http"],
+	"host": "localhost:5000",
+	"basePath": "",
+	"paths": {
+		"/api/users": {
+			"POST": {
+				"parameters": []
+			}
+		},
+		"/api/posts": {
+			"GET": {
+				"parameters": []
+			}
+		},
+		"/api/posts/:post_id": {
+			"DELETE": {
+				"parameters": [
+					{
+						"name": "post_id",
+						"in": "query",
+						"description": "search string",
+						"required": true,
+						"type": "string"
+					}
+				]
+			}
+		},
+		"/api/posts/like/:id": {
+			"PUT": {
+				"parameters": [
+					{
+						"name": "id",
+						"in": "query",
+						"description": "search string",
+						"required": true,
+						"type": "string"
+					}
+				]
+			}
+		},
+		"/api/posts/unlike/:id": {
+			"PUT": {
+				"parameters": [
+					{
+						"name": "id",
+						"in": "query",
+						"description": "search string",
+						"required": true,
+						"type": "string"
+					}
+				]
+			}
+		},
+		"/api/posts/comment/:id": {
+			"POST": {
+				"parameters": [
+					{
+						"name": "id",
+						"in": "query",
+						"description": "search string",
+						"required": true,
+						"type": "string"
+					}
+				]
+			}
+		},
+		"/api/posts/comment/:post_id/:comment_id": {
+			"DELETE": {
+				"parameters": [
+					{
+						"name": "post_id",
+						"in": "query",
+						"description": "search string",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "comment_id",
+						"in": "query",
+						"description": "search string",
+						"required": true,
+						"type": "string"
+					}
+				]
+			}
+		},
+		"/api/auth": {
+			"POST": {
+				"parameters": []
+			}
+		},
+		"/api/profile/me": {
+			"GET": {
+				"parameters": []
+			}
+		},
+		"/api/profile": {
+			"DELETE": {
+				"parameters": []
+			}
+		},
+		"/api/profile/user/:user_id": {
+			"GET": {
+				"parameters": [
+					{
+						"name": "user_id",
+						"in": "query",
+						"description": "search string",
+						"required": true,
+						"type": "string"
+					}
+				]
+			}
+		},
+		"/api/profile/experience": {
+			"PUT": {
+				"parameters": []
+			}
+		},
+		"/api/profile/experience/:exp_id": {
+			"DELETE": {
+				"parameters": [
+					{
+						"name": "exp_id",
+						"in": "query",
+						"description": "search string",
+						"required": true,
+						"type": "string"
+					}
+				]
+			}
+		},
+		"/api/profile/education": {
+			"PUT": {
+				"parameters": []
+			}
+		},
+		"/api/profile/education/:edu_id": {
+			"DELETE": {
+				"parameters": [
+					{
+						"name": "edu_id",
+						"in": "query",
+						"description": "search string",
+						"required": true,
+						"type": "string"
+					}
+				]
+			}
+		},
+		"/api/profile/github/:username": {
+			"GET": {
+				"parameters": [
+					{
+						"name": "username",
+						"in": "query",
+						"description": "search string",
+						"required": true,
+						"type": "string"
+					}
+				]
+			}
+		}
+	}
+}

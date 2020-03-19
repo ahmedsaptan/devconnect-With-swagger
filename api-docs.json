@@ -1,0 +1,3418 @@
+{
+	"info": {
+		"description": "This is a sample server",
+		"title": "Swagger",
+		"version": "1.0.0"
+	},
+	"host": "localhost:33334",
+	"basePath": "",
+	"produces": [
+		"application/json",
+		"multipart/form-data",
+		"text/plain; charset=utf-8",
+		"application/xml"
+	],
+	"schemes": ["http", "https"],
+	"securityDefinitions": {
+		"JWT": {
+			"type": "apiKey",
+			"in": "header",
+			"name": "token",
+			"description": ""
+		}
+	},
+	"swagger": "2.0",
+	"paths": {
+		"/API/V1/Commons/ArchivedPackages/ListAll": {
+			"get": {
+				"parameters": [
+					{
+						"name": "searchTerm",
+						"in": "query",
+						"description": "searchTerm",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "current",
+						"in": "query",
+						"description": "current page",
+						"required": false,
+						"type": "string"
+					}
+				],
+				"description": "Display list All Archived packages",
+				"tags": ["Archived packages"],
+				"responses": {
+					"200": {
+						"description": "Archived packages added"
+					},
+					"default": {
+						"description": "Unexpected error"
+					}
+				},
+				"security": [
+					{
+						"JWT": []
+					}
+				]
+			}
+		},
+		"/API/V1/Commons/ArchivedPackages/editArchivedContent": {
+			"post": {
+				"parameters": [
+					{
+						"name": "body",
+						"in": "body",
+						"description": null,
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/editedObj"
+						}
+					}
+				],
+				"description": "Edit Archived packages",
+				"tags": ["Archived packages"],
+				"responses": {
+					"200": {
+						"description": "Archived packages edited"
+					},
+					"default": {
+						"description": "Unexpected error"
+					}
+				},
+				"security": [
+					{
+						"JWT": []
+					}
+				]
+			}
+		},
+		"/API/V1/Commons/ArchivedPackages/SearchForLinkOrder": {
+			"get": {
+				"parameters": [
+					{
+						"name": "searchTerm",
+						"in": "query",
+						"description": "search string",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "current",
+						"in": "query",
+						"description": "current page",
+						"required": false,
+						"type": "string"
+					}
+				],
+				"description": "Search in All orders to add Archived packages",
+				"tags": ["Archived packages"],
+				"responses": {
+					"200": {
+						"description": "Archived packages added"
+					},
+					"default": {
+						"description": "Unexpected error"
+					}
+				},
+				"security": [
+					{
+						"JWT": []
+					}
+				]
+			}
+		},
+		"/API/V1/Commons/ArchivedPackages/AddArchive": {
+			"post": {
+				"parameters": [
+					{
+						"name": "body",
+						"in": "body",
+						"description": null,
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/archiveObj"
+						}
+					}
+				],
+				"description": "Add Archived packages",
+				"tags": ["Archived packages"],
+				"responses": {
+					"200": {
+						"description": "Archived packages added"
+					},
+					"default": {
+						"description": "Unexpected error"
+					}
+				},
+				"security": [
+					{
+						"JWT": []
+					}
+				]
+			}
+		},
+		"/API/V1/Commons/ArchivedPackages/getClientDetails": {
+			"get": {
+				"parameters": [
+					{
+						"name": "uID",
+						"in": "query",
+						"description": "cilent ID",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"description": "Show client details",
+				"tags": ["Archived packages"],
+				"responses": {
+					"200": {
+						"description": "get client details successfully"
+					},
+					"default": {
+						"description": "Unexpected error"
+					}
+				},
+				"security": [
+					{
+						"JWT": []
+					}
+				]
+			}
+		},
+		"/API/V1/Orders/": {
+			"post": {
+				"parameters": [
+					{
+						"name": "body",
+						"in": "body",
+						"description": null,
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/newModelRegistrationOrder"
+						}
+					}
+				],
+				"description": "Add New Registration Model Order (Appliance)",
+				"tags": ["Archived packages"],
+				"responses": {
+					"200": {
+						"description": "new order added"
+					},
+					"default": {
+						"description": "Unexpected error"
+					}
+				},
+				"security": [
+					{
+						"JWT": []
+					}
+				],
+				"produces": ["application/json", "application/xml"],
+				"consumes": ["multipart/form-data", "text/plain", "application/json"]
+			}
+		},
+		"/API/V1/Commons/ArchivedPackages/readAllWithSearch": {
+			"get": {
+				"parameters": [
+					{
+						"name": "type",
+						"in": "query",
+						"description": null,
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "searchTerm",
+						"in": "query",
+						"description": null,
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "current",
+						"in": "query",
+						"description": null,
+						"required": false,
+						"type": "string"
+					}
+				],
+				"description": "\n  search for Doctor Or Scanning Details",
+				"tags": ["Archived packages"],
+				"responses": {
+					"200": {
+						"description": "doctor or scanning details"
+					},
+					"default": {
+						"description": "Unexpected error"
+					}
+				},
+				"security": [
+					{
+						"JWT": []
+					}
+				]
+			}
+		},
+		"/API/V1/Orders/:id": {
+			"put": {
+				"parameters": [
+					{
+						"name": "body",
+						"in": "body",
+						"description": "Body Object",
+						"required": false,
+						"schema": {
+							"$ref": "#/definitions/UpdateOrder"
+						}
+					},
+					{
+						"name": "id",
+						"in": "path",
+						"description": "Order ID",
+						"required": true,
+						"type": "integer"
+					}
+				],
+				"description": "",
+				"tags": ["Orders"],
+				"responses": {
+					"200": {
+						"description": "{message: 'Order Has Updated Successfully', data: Object});",
+						"schema": {
+							"$ref": "#/definitions/UpdateReturnObject"
+						}
+					},
+					"400": {
+						"description": "{message: 'Order has Been charged and can't be updated'}"
+					},
+					"404": {
+						"description": "{message: 'Order Not Found'}"
+					},
+					"500": {
+						"description": "{message: 'some message'}"
+					}
+				},
+				"summary": "Update Existing Order and its sub-orders",
+				"security": [
+					{
+						"JWT": []
+					}
+				]
+			},
+			"get": {
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "Order ID",
+						"required": true,
+						"type": "integer"
+					}
+				],
+				"description": "",
+				"tags": ["Orders"],
+				"responses": {
+					"200": {
+						"description": "Order Object;",
+						"schema": {
+							"$ref": "#/definitions/GetReturnObject"
+						}
+					},
+					"400": {
+						"description": "{message: 'Order has Been charged and can't be updated'}"
+					},
+					"404": {
+						"description": "{message: 'Order Not Found'}"
+					},
+					"500": {
+						"description": "{message: 'some message'}"
+					}
+				},
+				"summary": "Retrieve Specific order and its related entites",
+				"security": [
+					{
+						"JWT": []
+					}
+				]
+			}
+		},
+		"/API/V1/Orders/conversion/quickEdit/:id": {
+			"post": {
+				"parameters": [
+					{
+						"name": "body",
+						"in": "body",
+						"description": "Body Object",
+						"required": false,
+						"schema": {
+							"$ref": "#/definitions/ConversionQuickEditBody"
+						}
+					},
+					{
+						"name": "id",
+						"in": "path",
+						"description": " Conversion Order ID - eg : 12",
+						"required": true,
+						"type": "integer"
+					}
+				],
+				"description": "",
+				"tags": ["Orders"],
+				"responses": {
+					"200": {
+						"description": "{message: 'Conversion Order Updated Successfuly',data: ConversionOrderObject})",
+						"schema": {
+							"$ref": "#/definitions/ConversionQuickEditResponse"
+						}
+					},
+					"400": {
+						"description": "{msg: \"This Order has been charged and can\\'t be Edited\"}"
+					},
+					"404": {
+						"description": "{msg: \"No Conversion Order With This ID\"}"
+					},
+					"500": {
+						"description": "{msg: \"errorMessage\"}"
+					}
+				},
+				"summary": "Conversion Quick Edit",
+				"security": [
+					{
+						"JWT": []
+					}
+				]
+			}
+		},
+		"/API/V1/Orders/conversion/uncharge/:id": {
+			"post": {
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": " Conversion Order ID - eg : 12",
+						"required": true,
+						"type": "integer"
+					}
+				],
+				"description": "",
+				"tags": ["Orders"],
+				"responses": {
+					"200": {
+						"description": "{message: 'Conversion Order has been uncharged successfully')"
+					},
+					"404": {
+						"description": "{msg: \"No Conversion Order With This ID\"}"
+					},
+					"500": {
+						"description": "{msg: \"errorMessage\"}"
+					}
+				},
+				"summary": "Uncharge Conversion Order",
+				"security": [
+					{
+						"JWT": []
+					}
+				]
+			}
+		},
+		"/API/V1/Orders/conversion/delete/:id": {
+			"delete": {
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "Conversion Order ID - eg : 12",
+						"required": true,
+						"type": "integer"
+					}
+				],
+				"description": "",
+				"tags": ["Orders"],
+				"responses": {
+					"200": {
+						"description": "{msg: 'Conversion order has been deleted Successfully'})"
+					},
+					"404": {
+						"description": "{msg: \"No Conversion Order With This ID\"}"
+					},
+					"500": {
+						"description": "{msg: \"errorMessage\"}"
+					}
+				},
+				"summary": "Delete Conversion Order",
+				"security": [
+					{
+						"JWT": []
+					}
+				]
+			}
+		},
+		"/API/V1/Orders/restoration/quickEdit/:id": {
+			"post": {
+				"parameters": [
+					{
+						"name": "body",
+						"in": "body",
+						"description": "Body Object",
+						"required": false,
+						"schema": {
+							"$ref": "#/definitions/RestorationQuickEditBody"
+						}
+					},
+					{
+						"name": "id",
+						"in": "path",
+						"description": " Restoration Order ID - eg : 12",
+						"required": true,
+						"type": "integer"
+					}
+				],
+				"description": "",
+				"tags": ["Orders"],
+				"responses": {
+					"200": {
+						"description": "{message: 'Restoration Order Updated Successfuly',data: RestorationOrderObject})",
+						"schema": {
+							"$ref": "#/definitions/RestorationQuickEditResponse"
+						}
+					},
+					"400": {
+						"description": "{msg: \"This Order has been charged and can\\'t be Edited\"}"
+					},
+					"404": {
+						"description": "{msg: \"No Restoration Order With This ID\"}"
+					},
+					"500": {
+						"description": "{msg: \"errorMessage\"}"
+					}
+				},
+				"summary": "Restoration Quick Edit",
+				"security": [
+					{
+						"JWT": []
+					}
+				]
+			}
+		},
+		"/API/V1/Orders/restoration/uncharge/:id": {
+			"post": {
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": " Restoration Order ID - eg : 12",
+						"required": true,
+						"type": "integer"
+					}
+				],
+				"description": "",
+				"tags": ["Orders"],
+				"responses": {
+					"200": {
+						"description": "{message: 'Restoration Order has been uncharged successfully')"
+					},
+					"404": {
+						"description": "{msg: \"No Restoration Order With This ID\"}"
+					},
+					"500": {
+						"description": "{msg: \"errorMessage\"}"
+					}
+				},
+				"summary": "Uncharge Restoration Order",
+				"security": [
+					{
+						"JWT": []
+					}
+				]
+			}
+		},
+		"/API/V1/Orders/restoration/delete/:id": {
+			"delete": {
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "Restoration Order ID - eg : 12",
+						"required": true,
+						"type": "integer"
+					}
+				],
+				"description": "",
+				"tags": ["Orders"],
+				"responses": {
+					"200": {
+						"description": "{msg: 'Restoration order has been deleted Successfully'})"
+					},
+					"404": {
+						"description": "{msg: \"No Restoration Order With This ID\"}"
+					},
+					"500": {
+						"description": "{msg: \"errorMessage\"}"
+					}
+				},
+				"summary": "Delete Restoration Order",
+				"security": [
+					{
+						"JWT": []
+					}
+				]
+			}
+		},
+		"/API/V1/Orders/report/quickEdit/:id": {
+			"post": {
+				"parameters": [
+					{
+						"name": "body",
+						"in": "body",
+						"description": "Body Object",
+						"required": false,
+						"schema": {
+							"$ref": "#/definitions/ReportQuickEditBody"
+						}
+					},
+					{
+						"name": "id",
+						"in": "path",
+						"description": " Report Order ID - eg : 12",
+						"required": true,
+						"type": "integer"
+					}
+				],
+				"description": "",
+				"tags": ["Orders"],
+				"responses": {
+					"200": {
+						"description": "{message: 'Report Order Updated Successfuly',data: ReportOrderObject})",
+						"schema": {
+							"$ref": "#/definitions/ReportQuickEditResponse"
+						}
+					},
+					"400": {
+						"description": "{msg: \"This Order has been charged and can\\'t be Edited\"}"
+					},
+					"404": {
+						"description": "{msg: \"No Report Order With This ID\"}"
+					},
+					"422": {
+						"description": "{msg: \"Internal Notes is mandatory for '$0' connect.Orders, previous changes NOT saved!\"}"
+					},
+					"500": {
+						"description": "{msg: \"errorMessage\"}"
+					}
+				},
+				"summary": "Report Quick Edit",
+				"security": [
+					{
+						"JWT": []
+					}
+				]
+			}
+		},
+		"/API/V1/Orders/report/uncharge/:id": {
+			"post": {
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": " Report Order ID - eg : 12",
+						"required": true,
+						"type": "integer"
+					}
+				],
+				"description": "",
+				"tags": ["Orders"],
+				"responses": {
+					"200": {
+						"description": "{message: 'Report Order has been uncharged successfully')"
+					},
+					"404": {
+						"description": "{msg: \"No Report Order With This ID\"}"
+					},
+					"500": {
+						"description": "{msg: \"errorMessage\"}"
+					}
+				},
+				"summary": "Uncharge Report Order",
+				"security": [
+					{
+						"JWT": []
+					}
+				]
+			}
+		},
+		"/API/V1/Orders/report/delete/:id": {
+			"delete": {
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "Report Order ID - eg : 12",
+						"required": true,
+						"type": "integer"
+					}
+				],
+				"description": "",
+				"tags": ["Orders"],
+				"responses": {
+					"200": {
+						"description": "{msg: 'Report order has been deleted Successfully'})"
+					},
+					"404": {
+						"description": "{msg: \"No Report Order With This ID\"}"
+					},
+					"500": {
+						"description": "{msg: \"errorMessage\"}"
+					}
+				},
+				"summary": "Delete Report Order",
+				"security": [
+					{
+						"JWT": []
+					}
+				]
+			}
+		},
+		"/API/V1/Orders/model/quickEdit/:id": {
+			"post": {
+				"parameters": [
+					{
+						"name": "body",
+						"in": "body",
+						"description": "Body Object",
+						"required": false,
+						"schema": {
+							"$ref": "#/definitions/ModelQuickEditBody"
+						}
+					},
+					{
+						"name": "id",
+						"in": "path",
+						"description": " Model Order ID - eg : 12",
+						"required": true,
+						"type": "integer"
+					}
+				],
+				"description": "",
+				"tags": ["Orders"],
+				"responses": {
+					"200": {
+						"description": "{message: 'Appliance Order Updated Successfuly',data: ModelOrderObject})",
+						"schema": {
+							"$ref": "#/definitions/ModelQuickEditResponse"
+						}
+					},
+					"400": {
+						"description": "{msg: \"This Order has been charged and can\\'t be Edited\"}"
+					},
+					"404": {
+						"description": "{msg: \"No Appliance Order With This ID\"}"
+					},
+					"500": {
+						"description": "{msg: \"errorMessage\"}"
+					}
+				},
+				"summary": "Model Quick Edit",
+				"security": [
+					{
+						"JWT": []
+					}
+				]
+			}
+		},
+		"/API/V1/Orders/model/uncharge/:id": {
+			"post": {
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": " Model Order ID - eg : 12",
+						"required": true,
+						"type": "integer"
+					}
+				],
+				"description": "",
+				"tags": ["Orders"],
+				"responses": {
+					"200": {
+						"description": "{message: 'Model Order has been uncharged successfully')"
+					},
+					"404": {
+						"description": "{msg: \"No Appliance Order With This ID\"}"
+					},
+					"500": {
+						"description": "{msg: \"errorMessage\"}"
+					}
+				},
+				"summary": "Uncharge Model Order",
+				"security": [
+					{
+						"JWT": []
+					}
+				]
+			}
+		},
+		"/API/V1/Orders/model/delete/:id": {
+			"delete": {
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "Model Order ID - eg : 12",
+						"required": true,
+						"type": "integer"
+					}
+				],
+				"description": "",
+				"tags": ["Orders"],
+				"responses": {
+					"200": {
+						"description": "{msg: 'Appliance order has been deleted Successfully'})"
+					},
+					"404": {
+						"description": "{msg: \"No Appliance Order With This ID\"}"
+					},
+					"500": {
+						"description": "{msg: \"errorMessage\"}"
+					}
+				},
+				"summary": "Delete Model Order",
+				"security": [
+					{
+						"JWT": []
+					}
+				]
+			}
+		}
+	},
+	"definitions": {
+		"contentParts": {
+			"required": ["PartType", "IsUsed", "Count"],
+			"properties": {
+				"PartType": {
+					"type": "integer",
+					"description": ""
+				},
+				"IsUsed": {
+					"type": "integer",
+					"description": ""
+				},
+				"OtherDecription": {
+					"type": "string",
+					"description": ""
+				},
+				"Count": {
+					"type": "integer",
+					"description": ""
+				}
+			}
+		},
+		"editedObj": {
+			"required": ["archivedID", "storageUnit", "contentParts"],
+			"properties": {
+				"archivedID": {
+					"type": "integer",
+					"description": ""
+				},
+				"storageUnit": {
+					"type": "string",
+					"description": ""
+				},
+				"contentParts": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/contentParts"
+					}
+				}
+			}
+		},
+		"archiveObj": {
+			"required": ["orderID", "trackingNumber", "storageUnit", "contentParts"],
+			"properties": {
+				"orderID": {
+					"type": "integer",
+					"description": "order Id"
+				},
+				"trackingNumber": {
+					"type": "integer",
+					"description": "Tracking Number"
+				},
+				"storageUnit": {
+					"type": "string",
+					"description": "-storageUnit"
+				},
+				"contentParts": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/contentParts"
+					}
+				}
+			}
+		},
+		"modelOrder": {
+			"required": [
+				"intraoral",
+				"impressionScans",
+				"redo",
+				"cost",
+				"archOfInterest"
+			],
+			"properties": {
+				"intraoral": {
+					"type": "integer",
+					"description": "-"
+				},
+				"impressionScans": {
+					"type": "integer",
+					"description": "-"
+				},
+				"redo": {
+					"type": "integer",
+					"description": "-"
+				},
+				"cost": {
+					"type": "integer",
+					"description": "-"
+				},
+				"archOfInterest": {
+					"type": "integer",
+					"description": "-"
+				}
+			}
+		},
+		"newModelRegistrationOrder": {
+			"required": [
+				"scanId",
+				"docId",
+				"FName",
+				"LName",
+				"dcmPatientName",
+				"Type",
+				"HistoryRecord",
+				"separateOrder",
+				"bName",
+				"modelOrder"
+			],
+			"properties": {
+				"scanId": {
+					"type": "integer",
+					"description": "-"
+				},
+				"docId": {
+					"type": "integer",
+					"description": "-"
+				},
+				"FName": {
+					"type": "string",
+					"description": "-"
+				},
+				"LName": {
+					"type": "string",
+					"description": "-"
+				},
+				"dcmPatientName": {
+					"type": "string",
+					"description": "-"
+				},
+				"Type": {
+					"type": "integer",
+					"description": "-"
+				},
+				"HistoryRecord": {
+					"type": "string",
+					"description": "-"
+				},
+				"separateOrder": {
+					"type": "integer",
+					"description": "-"
+				},
+				"bName": {
+					"type": "integer",
+					"description": "-"
+				},
+				"modelOrder": {
+					"$ref": "#/definitions/modelOrder"
+				}
+			}
+		},
+		"UpdateOrder": {
+			"required": ["Fname", "Lname", "statusId", "scanId"],
+			"properties": {
+				"files": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"HistoryRecord": {
+					"type": "string",
+					"description": "Internal histroy Note ",
+					"example": "This is a record"
+				},
+				"AgentID": {
+					"type": "integer",
+					"description": "sales agent id ",
+					"example": 124
+				},
+				"sentTo": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"docID": {
+					"type": "integer",
+					"description": "doctor id ",
+					"example": 25
+				},
+				"Fname": {
+					"type": "string",
+					"description": "User First Name ",
+					"example": "sasuke"
+				},
+				"Lname": {
+					"type": "string",
+					"description": "user Last name ",
+					"example": "sam"
+				},
+				"PendingReason": {
+					"type": "string",
+					"description": "Reason for pending in panding status ",
+					"example": "Reson for pending"
+				},
+				"Cost": {
+					"type": "integer",
+					"description": "Order Cost ",
+					"example": 500
+				},
+				"convRedo": {
+					"type": "integer",
+					"description": "Is Conv Order Redo ",
+					"example": 0
+				},
+				"statusId": {
+					"type": "integer",
+					"description": "Conversion order  ",
+					"example": 1
+				},
+				"operator": {
+					"type": "integer",
+					"description": "Operator ID ",
+					"example": 15
+				},
+				"scanId": {
+					"type": "integer",
+					"description": "scaning center ID ",
+					"example": 12
+				},
+				"preShippingInst": {
+					"type": "string",
+					"description": "Pre Shipping Instruction ",
+					"example": "Note"
+				},
+				"missing": {
+					"type": "array",
+					"items": {
+						"type": "integer"
+					}
+				},
+				"extracted": {
+					"type": "array",
+					"items": {
+						"type": "integer"
+					}
+				},
+				"abutments": {
+					"type": "array",
+					"items": {
+						"type": "integer"
+					}
+				},
+				"crowns": {
+					"type": "array",
+					"items": {
+						"type": "integer"
+					}
+				},
+				"implants": {
+					"type": "array",
+					"items": {
+						"type": "integer"
+					}
+				},
+				"archConvMax": {
+					"type": "integer",
+					"description": "Arch Conversion Maxilla ",
+					"example": 6
+				},
+				"archConvMand": {
+					"type": "integer",
+					"description": "Arch Conversion Mandible ",
+					"example": 0
+				},
+				"conCurrencyId": {
+					"type": "integer",
+					"description": "Currency ID ",
+					"example": 5
+				},
+				"Type": {
+					"type": "integer",
+					"description": "Software Type ID ",
+					"example": 34
+				},
+				"format1": {
+					"type": "integer",
+					"description": "Format 1 Choices ",
+					"example": 0
+				},
+				"format2": {
+					"type": "integer",
+					"description": "Format 2 Choices ",
+					"example": 0
+				},
+				"format3": {
+					"type": "integer",
+					"description": "Format 3 Choices ",
+					"example": 1
+				},
+				"convRush": {
+					"type": "integer",
+					"description": "Is COnversion Rush ",
+					"example": 0
+				},
+				"bConvName": {
+					"type": "integer",
+					"description": "UserID To Be billed For conversion ",
+					"example": 122
+				},
+				"statusConv": {
+					"type": "integer",
+					"description": "Conversion Status ",
+					"example": 6
+				},
+				"shadeSys": {
+					"type": "integer",
+					"description": "ShadeSys Number ",
+					"example": 5
+				},
+				"vitapan_list": {
+					"type": "string",
+					"description": "vitapan_list Options ",
+					"example": "1M"
+				},
+				"restRush": {
+					"type": "integer",
+					"description": "Is Restoration Rush ",
+					"example": 1
+				},
+				"restRedo": {
+					"type": "integer",
+					"description": "Is Restoration Redo ",
+					"example": 0
+				},
+				"restPendingEdit": {
+					"type": "integer",
+					"description": "is Restoration Pending ",
+					"example": 33
+				},
+				"pouring": {
+					"type": "integer",
+					"description": "Pouring ",
+					"example": 0
+				},
+				"abutmentMaterial": {
+					"type": "integer",
+					"description": "AbutmentMaterial ",
+					"example": 2
+				},
+				"crownMaterial": {
+					"type": "integer",
+					"description": "CrownMaterial ",
+					"example": 0
+				},
+				"retentionType": {
+					"type": "integer",
+					"description": "retentionType ",
+					"example": 0
+				},
+				"restComment": {
+					"type": "string",
+					"description": "restComment ",
+					"example": "Hello"
+				},
+				"abutmentCost": {
+					"type": "integer",
+					"description": "abutmentCost ",
+					"example": 50
+				},
+				"crownCost": {
+					"type": "integer",
+					"description": "crownCost ",
+					"example": 40
+				},
+				"ImplantAnalog": {
+					"type": "integer",
+					"description": "Cost - ImplantAnalog Cost ",
+					"example": 20
+				},
+				"impressionPouring": {
+					"type": "integer",
+					"description": "cost - impressionPouring cost ",
+					"example": 100
+				},
+				"shippingHandling": {
+					"type": "integer",
+					"description": "Cost - shippingHandling Cost ",
+					"example": 14
+				},
+				"restRushCost": {
+					"type": "integer",
+					"description": "restRush Cost ",
+					"example": 20
+				},
+				"restCost": {
+					"type": "integer",
+					"description": "Total - restCost Total ",
+					"example": 250
+				},
+				"restPendingReason": {
+					"type": "string",
+					"description": "restPendingReason ",
+					"example": "Reson For Pending"
+				},
+				"dcmPatientName": {
+					"type": "string",
+					"description": "dcmPatientName ",
+					"example": "Ahmad"
+				},
+				"reportOrder": {
+					"$ref": "#/definitions/ReportOrder"
+				},
+				"modelOrder": {
+					"$ref": "#/definitions/ModelOrder"
+				}
+			}
+		},
+		"ReportOrder": {
+			"required": [
+				"EvImplant",
+				"SiEvaluation",
+				"RuPathology",
+				"SFOView",
+				"TmEvaluation"
+			],
+			"properties": {
+				"ImgAkous": {
+					"type": "string",
+					"description": "ImgAkous Date ",
+					"example": "2019-11-11"
+				},
+				"dcmsex": {
+					"type": "string",
+					"description": "Patient Gender ",
+					"example": "Female"
+				},
+				"dcmrel": {
+					"type": "string",
+					"description": "Patient Node ",
+					"example": "Hello"
+				},
+				"dcmdob": {
+					"type": "string",
+					"description": "Patient Date Of birth ",
+					"example": "1988-11-11"
+				},
+				"imPlanned": {
+					"type": "integer",
+					"description": "imPLanned ",
+					"example": 0
+				},
+				"EvImplant": {
+					"type": "integer",
+					"description": "EvImplant ",
+					"example": 1
+				},
+				"SiEvaluation": {
+					"type": "integer",
+					"description": "SiEvaluation ",
+					"example": 0
+				},
+				"RuPathology": {
+					"type": "integer",
+					"description": "RuPathology ",
+					"example": 0
+				},
+				"airWayEvaluation": {
+					"type": "integer",
+					"description": "airWayEvaluation ",
+					"example": 0
+				},
+				"bReport": {
+					"type": "integer",
+					"description": "bReport ",
+					"example": 0
+				},
+				"SFOView": {
+					"type": "integer",
+					"description": "SFOView ",
+					"example": 0
+				},
+				"rush": {
+					"type": "integer",
+					"description": "rush ",
+					"example": 0
+				},
+				"redo": {
+					"type": "integer",
+					"description": "Redo ",
+					"example": 0
+				},
+				"TmEvaluation": {
+					"type": "integer",
+					"description": "TmEvaluation ",
+					"example": 0
+				},
+				"status": {
+					"type": "integer",
+					"description": "Report status ",
+					"example": 3
+				},
+				"comment": {
+					"type": "string",
+					"description": "Comment ",
+					"example": "Welcome"
+				},
+				"xComment": {
+					"type": "string",
+					"description": "xComment ",
+					"example": "Welcome there"
+				},
+				"zeroReason_otherOption_edit": {
+					"type": "string",
+					"description": "zeroReason_otherOption_edit ",
+					"example": "Reason there"
+				},
+				"zeroReason": {
+					"type": "string",
+					"description": "zeroReason ",
+					"example": "Reason there"
+				},
+				"pendingReason": {
+					"type": "string",
+					"description": "pendingReason ",
+					"example": "Reason for Pending"
+				},
+				"bRepName": {
+					"type": "integer",
+					"description": "UserID To Be billed For Report ",
+					"example": 122
+				},
+				"cost": {
+					"type": "integer",
+					"description": "Reoirt Cost ",
+					"example": 165
+				}
+			}
+		},
+		"ModelOrder": {
+			"required": ["intraoral", "bModName"],
+			"properties": {
+				"intraoral": {
+					"type": "integer",
+					"description": "intraoral ",
+					"example": 0
+				},
+				"bModName": {
+					"type": "integer",
+					"description": "To Be biiled for model Appliance ",
+					"example": 0
+				},
+				"rush": {
+					"type": "integer",
+					"description": "rush ",
+					"example": 0
+				},
+				"redo": {
+					"type": "integer",
+					"description": "Redo ",
+					"example": 0
+				},
+				"impressionScans": {
+					"type": "integer",
+					"description": "impressionScans ",
+					"example": 0
+				},
+				"status": {
+					"type": "integer",
+					"description": "Report status ",
+					"example": 3
+				},
+				"poendingMod": {
+					"type": "integer",
+					"description": "Is Model Pending ",
+					"example": 1
+				},
+				"comment": {
+					"type": "string",
+					"description": "Comment ",
+					"example": "Welcome"
+				},
+				"xComment": {
+					"type": "string",
+					"description": "xComment ",
+					"example": "Welcome there"
+				},
+				"pendingReason": {
+					"type": "string",
+					"description": "pendingReason ",
+					"example": "Reason for Pending"
+				},
+				"cost": {
+					"type": "integer",
+					"description": "Reoirt Cost ",
+					"example": 165
+				}
+			}
+		},
+		"ReportOrderReturn": {
+			"required": ["EvImplant", "RuPathology"],
+			"properties": {
+				"ID": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"RadID": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"DOB": {
+					"type": "integer",
+					"description": "Description ",
+					"example": null
+				},
+				"Gender": {
+					"type": "string",
+					"description": "Description ",
+					"example": "Female"
+				},
+				"RelevantHistory": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"ImPlanned": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"EvImplant": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"SiEvaluation": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"TmEvaluation": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"RuPathology": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"imgAkous": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"Comment": {
+					"type": "string",
+					"description": "Description ",
+					"example": "hello"
+				},
+				"xComment": {
+					"type": "string",
+					"description": "Description ",
+					"example": "hello"
+				},
+				"xxComment": {
+					"type": "string",
+					"description": "Description ",
+					"example": "hello"
+				},
+				"isFinished": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"FileName": {
+					"type": "string",
+					"description": "Description ",
+					"example": "namepath"
+				},
+				"BaiscReport": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"Cost": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 100
+				},
+				"CostDiff": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 50
+				},
+				"CostDiffReason": {
+					"type": "string",
+					"description": "Description ",
+					"example": "Reason"
+				},
+				"StatusId": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"isRush": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"xFileName": {
+					"type": "string",
+					"description": "Description ",
+					"example": "file Path"
+				},
+				"SFOV": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"Currency": {
+					"type": "string",
+					"description": "Description ",
+					"example": "$"
+				},
+				"TimeBilled": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 12934195185
+				},
+				"dateSent": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 9492849481
+				},
+				"dateEnd": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 89781738173
+				},
+				"dateUpd": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 294294829
+				},
+				"ToBeBilled": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 33454
+				},
+				"BillRek": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"PT_CC_FULL_NAME": {
+					"type": "string",
+					"description": "Description ",
+					"example": "Hello"
+				},
+				"PT_CC_NUMBER": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"PT_CC_TYPE": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"PT_CC_EXP_Y": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"PT_CC_EXP_M": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"closed": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"closeDate": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 3953959259
+				},
+				"closer": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"closePType": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"closeType": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"closeWLCMSentON": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"closeCommision": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"exclude": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"SalesAgentId": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"xFileNamePortable": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"voucherIds": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"assignee": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"assignedOn": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"RevisionDate": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"RevisedBy": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"isRedo": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"Invoiced": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"InvoiceNum": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"RepZeroReason": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"airWayEvaluation": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"ReportZeroReason_otherOption": {
+					"type": "string",
+					"description": "Description ",
+					"example": "Hello"
+				}
+			}
+		},
+		"ConversionOrderReturn": {
+			"required": ["Maxilla", "Mandible"],
+			"properties": {
+				"ID": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"OpID": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"software": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"Type": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"Maxilla": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"Mandible": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"Comment": {
+					"type": "string",
+					"description": "Description ",
+					"example": "Hello"
+				},
+				"xComment": {
+					"type": "string",
+					"description": "Description ",
+					"example": "Hello"
+				},
+				"isFinished": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"Qopt1": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"Qopt2": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"Qopt3": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"Qopt4": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"Qopt5": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"FileName": {
+					"type": "string",
+					"description": "Description ",
+					"example": "FilePath"
+				},
+				"PortableV": {
+					"type": "string",
+					"description": "Description ",
+					"example": "FilePath"
+				},
+				"Cost": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 100
+				},
+				"CostDiff": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 50
+				},
+				"CostDiffReason": {
+					"type": "string",
+					"description": "Description ",
+					"example": "Why"
+				},
+				"Currency": {
+					"type": "string",
+					"description": "Description ",
+					"example": "$"
+				},
+				"SalesAgentId": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1452
+				},
+				"ToBeBilled": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 36333
+				},
+				"BillRek": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"PT_CC_FULL_NAME": {
+					"type": "string",
+					"description": "Description ",
+					"example": "Name"
+				},
+				"PT_CC_NUMBER": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 144
+				},
+				"PT_CC_TYPE": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"PT_CC_EXP_Y": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"PT_CC_EXP_M": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"TimeBilled": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1285925295
+				},
+				"dateSent": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 19792749274
+				},
+				"dateEnd": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 125729572957
+				},
+				"dateUpd": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 129729579
+				},
+				"closed": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"closeDate": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 9247294729
+				},
+				"closer": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"closePType": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"closeType": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"closeWLCMSentON": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"closeCommision": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"StatusId": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"isRush": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"xFileName": {
+					"type": "string",
+					"description": "Description ",
+					"example": "File PAth"
+				},
+				"xFileNamePortable": {
+					"type": "string",
+					"description": "Description ",
+					"example": "File PAth"
+				},
+				"voucherIds": {
+					"type": "string",
+					"description": "Description ",
+					"example": "1414,3414,545"
+				},
+				"RevisionDate": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1636363636
+				},
+				"RevisedBy": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 152525
+				},
+				"isRedo": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"Invoiced": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"InvoiceNum": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"SimZeroReason": {
+					"type": "string",
+					"description": "Description ",
+					"example": "Reason"
+				},
+				"ConversionZeroReason_otherOption": {
+					"type": "string",
+					"description": "Description ",
+					"example": "Reason"
+				}
+			}
+		},
+		"RestorationOrderReturn": {
+			"required": ["abutmentMaterial", "hasIntraOralScan", "serviceProvider"],
+			"properties": {
+				"ID": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"Comment": {
+					"type": "string",
+					"description": "Description ",
+					"example": "Hello"
+				},
+				"xComment": {
+					"type": "string",
+					"description": "Description ",
+					"example": "Hello"
+				},
+				"FileName": {
+					"type": "string",
+					"description": "Description ",
+					"example": "File Path"
+				},
+				"Cost": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 100
+				},
+				"CostDiff": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 5
+				},
+				"CostDiffReason": {
+					"type": "string",
+					"description": "Description ",
+					"example": "Reason"
+				},
+				"StatusId": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"isRush": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"xFileName": {
+					"type": "string",
+					"description": "Description ",
+					"example": "File Path"
+				},
+				"Currency": {
+					"type": "string",
+					"description": "Description ",
+					"example": "$"
+				},
+				"TimeBilled": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 2525252
+				},
+				"dateSent": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 747462746
+				},
+				"dateEnd": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 24724729479
+				},
+				"dateUpd": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1931938193
+				},
+				"ToBeBilled": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 33353
+				},
+				"BillRek": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"PT_CC_FULL_NAME": {
+					"type": "string",
+					"description": "Description ",
+					"example": "Name"
+				},
+				"PT_CC_NUMBER": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 155
+				},
+				"PT_CC_EXP_Y": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"PT_CC_EXP_M": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"closed": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"closeDate": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 194953522
+				},
+				"closer": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"closePType": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"closeType": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"closeWLCMSentON": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"closeCommision": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"SalesAgentId": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"xFileNamePortable": {
+					"type": "string",
+					"description": "Description ",
+					"example": "File Path"
+				},
+				"voucherIds": {
+					"type": "string",
+					"description": "Description ",
+					"example": "134,1414"
+				},
+				"assignee": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1342
+				},
+				"assignedOn": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"RevisionDate": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"RevisedBy": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"abutmentMaterial": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"abutmentMaterialComment": {
+					"type": "string",
+					"description": "Description ",
+					"example": "Comment"
+				},
+				"retentionType": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"retentionTypeComment": {
+					"type": "string",
+					"description": "Description ",
+					"example": "COmment"
+				},
+				"shadeSys": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"shadeSysOther": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"shadeValue": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"hasIntraOralScan": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"packageTrackNO": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"serviceProvider": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 3411
+				},
+				"isRedo": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"OperatorId": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"Invoiced": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"InvoiceNum": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 15
+				},
+				"crownMaterial": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"crownMaterialComment": {
+					"type": "string",
+					"description": "Description ",
+					"example": "Comment"
+				},
+				"restorationType": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"pouring": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"pendingReason": {
+					"type": "string",
+					"description": "Description ",
+					"example": "Reason"
+				},
+				"isPending": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"isPouring": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"shadeType": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"shadeCompany": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"shadeSubList": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"AbutCost": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 15
+				},
+				"CrownCost": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 20
+				},
+				"ImplantAnalogCost": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 50
+				},
+				"ImpressionCost": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 33
+				},
+				"ShippingCost": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 2
+				},
+				"RushCost": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"DesignedBy": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"ShippedBy": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"RestorationZeroReason": {
+					"type": "string",
+					"description": "Description ",
+					"example": "Reason"
+				},
+				"RestorationZeroReason_otherOption": {
+					"type": "string",
+					"description": "Description ",
+					"example": "Reason"
+				}
+			}
+		},
+		"ModelOrderReturn": {
+			"required": ["OperatorId", "IsLaserScan"],
+			"properties": {
+				"ID": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"TotallyEdentulous": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"DestAddress": {
+					"type": "string",
+					"description": "Description ",
+					"example": "Address"
+				},
+				"PackageTrackNO": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 134
+				},
+				"ApplianceTrackNO": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 123
+				},
+				"SendPVS": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"MaxillaType": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"MandibleType": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 0
+				},
+				"Cost": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 100
+				},
+				"CostDiff": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 15
+				},
+				"CostDiffReason": {
+					"type": "string",
+					"description": "Description ",
+					"example": "Reason"
+				},
+				"Currency": {
+					"type": "string",
+					"description": "Description ",
+					"example": "$"
+				},
+				"OperatorId": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 122
+				},
+				"SalesAgentId": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1241
+				},
+				"WaxSetUp": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"PatientDenture": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"DoublicateDenture": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"ConnectComment": {
+					"type": "string",
+					"description": "Description ",
+					"example": "Comment"
+				},
+				"CPComment": {
+					"type": "string",
+					"description": "Description ",
+					"example": "Comment"
+				},
+				"softwareEnumId": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1213
+				},
+				"serviceProviderId": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 15
+				},
+				"StatusId": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"isRush": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"xFileName": {
+					"type": "string",
+					"description": "Description ",
+					"example": "File PAth"
+				},
+				"IsLaserScan": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"TimeBilled": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1352520509
+				},
+				"dateSent": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 193949249149
+				},
+				"dateEnd": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 13592942959
+				},
+				"dateUpd": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 199592952952
+				},
+				"ToBeBilled": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 33532
+				},
+				"BillRek": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"PT_CC_FULL_NAME": {
+					"type": "string",
+					"description": "Description ",
+					"example": "Name"
+				},
+				"PT_CC_NUMBER": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 120
+				},
+				"PT_CC_TYPE": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"PT_CC_EXP_Y": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"PT_CC_EXP_M": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"closed": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"closeDate": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 242410419419
+				},
+				"closer": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"closePType": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"closeType": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"closeWLCMSentON": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"closeCommision": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"hasIntraoralScans": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"FileName": {
+					"type": "string",
+					"description": "Description ",
+					"example": "File Path"
+				},
+				"xFileNamePortable": {
+					"type": "string",
+					"description": "Description ",
+					"example": "File Path"
+				},
+				"voucherIds": {
+					"type": "string",
+					"description": "Description ",
+					"example": "120,12"
+				},
+				"RevisionDate": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1528529529
+				},
+				"RevisedBy": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"RegistrationType": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"moldScannedOn": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"isRedo": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"Invoiced": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"InvoiceNum": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"pouredInHouse": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"impression_scans": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				}
+			}
+		},
+		"OrderReturn": {
+			"required": [
+				"tpid",
+				"repId",
+				"IsmileID",
+				"implantsSites",
+				"abutmentSites",
+				"crownSites"
+			],
+			"properties": {
+				"id": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"scanId": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"docId": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"applianceId": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"simId": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"tpid": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"repId": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"trnId": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"sgid": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"vrId": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"IsmileID": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"dcmPatientName": {
+					"type": "string",
+					"description": "Description ",
+					"example": "Ahmad"
+				},
+				"loanerId": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"teethMissed": {
+					"type": "string",
+					"description": "Description ",
+					"example": "2,4,6"
+				},
+				"teethExtract": {
+					"type": "string",
+					"description": "Description ",
+					"example": "2,4,6"
+				},
+				"implantsSites": {
+					"type": "string",
+					"description": "Description ",
+					"example": "2,4,6"
+				},
+				"abutmentSites": {
+					"type": "string",
+					"description": "Description ",
+					"example": "2,4,6"
+				},
+				"crownSites": {
+					"type": "string",
+					"description": "Description ",
+					"example": "2,4,6"
+				},
+				"surgeryDate": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1949529529
+				},
+				"dateSent": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1853583583
+				},
+				"dateEnd": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 189892894289
+				},
+				"dateUpd": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1824242898
+				},
+				"timeBilled": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 138538983
+				},
+				"salesAgentId": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"cost": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 100
+				},
+				"isRush": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"toBeBilled": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 33533
+				},
+				"billRek": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"ptCcFullName": {
+					"type": "string",
+					"description": "Description ",
+					"example": "Name"
+				},
+				"ptCcNumber": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"ptCcType": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"ptCcExpY": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"ptCcExpM": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"closed": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"closeDate": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 199435939
+				},
+				"closer": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"closePType": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"closeType": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"closeWlcmSentOn": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"closeCommision": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"currency": {
+					"type": "string",
+					"description": "Description ",
+					"example": "$"
+				},
+				"fastTrack": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"softId": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"clientComment": {
+					"type": "string",
+					"description": "Description ",
+					"example": "Any Text"
+				},
+				"internalComment": {
+					"type": "string",
+					"description": "Description ",
+					"example": "Any Text"
+				},
+				"preShippingInst": {
+					"type": "string",
+					"description": "Description ",
+					"example": "Any Text"
+				},
+				"confReminderLastDate": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1663636225
+				},
+				"restorationId": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"miscId": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"thirdPartyService": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"reminderFlag": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"orthoID": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"missingSites": {
+					"type": "string",
+					"description": "Description ",
+					"example": "1,2,5"
+				},
+				"toBeMoved": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"existingImplants": {
+					"type": "string",
+					"description": "Description ",
+					"example": "1,2,4"
+				},
+				"patientBirthDate": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1482948299
+				},
+				"patientGender": {
+					"type": "string",
+					"description": "Description ",
+					"example": "Female"
+				},
+				"missingType": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"Printer_Acc_Shopping_Cart_ID": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				}
+			}
+		},
+		"OrderInternalHistory": {
+			"required": ["HistoryRecord"],
+			"properties": {
+				"ID": {
+					"type": "integer",
+					"description": "ID ",
+					"example": 13424
+				},
+				"orderId": {
+					"type": "integer",
+					"description": "related order ID ",
+					"example": 13424
+				},
+				"HistoryRecord": {
+					"type": "string",
+					"description": "NOte ",
+					"example": "Note"
+				},
+				"dateSent": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 193859358
+				},
+				"owner": {
+					"type": "integer",
+					"description": "Doctor or scanning center ID ",
+					"example": 33320
+				},
+				"sentTo": {
+					"type": "string",
+					"description": "Description ",
+					"example": "TP@3ddx.com,cs@3ddx.com"
+				},
+				"hasFile": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"actionOwnerId": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"internalNoteAction": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"actionTime": {
+					"type": "string",
+					"description": "Description ",
+					"example": "185864838"
+				}
+			}
+		},
+		"OrderLockingHistory": {
+			"required": ["orderId", "agentId"],
+			"properties": {
+				"id": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"orderId": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"agentId": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 1
+				},
+				"actionTime": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 199528428
+				},
+				"action": {
+					"type": "string",
+					"description": "Description ",
+					"example": "action"
+				}
+			}
+		},
+		"UpdateReturnObject": {
+			"required": ["order"],
+			"properties": {
+				"order": {
+					"$ref": "#/definitions/OrderReturn"
+				},
+				"InternalHistory": {
+					"$ref": "#/definitions/OrderInternalHistory"
+				},
+				"modelOrder": {
+					"$ref": "#/definitions/ModelOrderReturn"
+				},
+				"reportOrder": {
+					"$ref": "#/definitions/ReportOrderReturn"
+				},
+				"ConversionOrder": {
+					"$ref": "#/definitions/ConversionOrderReturn"
+				},
+				"restorationOrder": {
+					"$ref": "#/definitions/RestorationOrderReturn"
+				}
+			}
+		},
+		"GetReturnObject": {
+			"required": ["order"],
+			"properties": {
+				"order": {
+					"$ref": "#/definitions/OrderReturn"
+				},
+				"InternalHistory": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/OrderInternalHistory"
+					}
+				},
+				"LockingHistory": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/OrderLockingHistory"
+					}
+				},
+				"modelOrder": {
+					"$ref": "#/definitions/ModelOrderReturn"
+				},
+				"reportOrder": {
+					"$ref": "#/definitions/ReportOrderReturn"
+				},
+				"ConversionOrder": {
+					"$ref": "#/definitions/ConversionOrderReturn"
+				},
+				"restorationOrder": {
+					"$ref": "#/definitions/RestorationOrderReturn"
+				}
+			}
+		},
+		"ConversionQuickEditBody": {
+			"required": ["orderId", "Mandible", "Maxilla"],
+			"properties": {
+				"xComment": {
+					"type": "string",
+					"description": "Clinet Comment ",
+					"example": "Hello"
+				},
+				"cost": {
+					"type": "integer",
+					"description": "Order Cost ",
+					"example": 100
+				},
+				"operator": {
+					"type": "integer",
+					"description": "operator id ",
+					"example": 55
+				},
+				"redo": {
+					"type": "integer",
+					"description": "is redo ",
+					"example": 0
+				},
+				"rush": {
+					"type": "integer",
+					"description": "is rush ",
+					"example": 0
+				},
+				"statusId": {
+					"type": "integer",
+					"description": "status id ",
+					"example": 6
+				},
+				"HistoryRecord": {
+					"type": "string",
+					"description": "Description ",
+					"example": "Note Record"
+				},
+				"PendingReason": {
+					"type": "string",
+					"description": "Description ",
+					"example": "Reason for pending"
+				},
+				"orderId": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 33543
+				},
+				"Mandible": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 2
+				},
+				"Maxilla": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 5
+				},
+				"type": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 0
+				},
+				"files": {
+					"type": "string",
+					"description": "Description ",
+					"example": "List of files Paths"
+				}
+			}
+		},
+		"ConversionQuickEditResponse": {
+			"required": ["updateConv"],
+			"properties": {
+				"internalHistory": {
+					"$ref": "#/definitions/OrderInternalHistory"
+				},
+				"updateConv": {
+					"$ref": "#/definitions/ConversionOrderReturn"
+				}
+			}
+		},
+		"RestorationQuickEditBody": {
+			"required": [
+				"implantAnalogCost",
+				"impressionCost",
+				"shippingHandlingCost"
+			],
+			"properties": {
+				"dcmPatientName": {
+					"type": "string",
+					"description": "patient name ",
+					"example": "sam"
+				},
+				"cost": {
+					"type": "integer",
+					"description": "Order Cost ",
+					"example": 100
+				},
+				"rushCost": {
+					"type": "integer",
+					"description": "Order Rush Cost ",
+					"example": 100
+				},
+				"crownCost": {
+					"type": "integer",
+					"description": "Order Crown Cost ",
+					"example": 100
+				},
+				"abutmentCost": {
+					"type": "integer",
+					"description": "Order Abutment Cost ",
+					"example": 100
+				},
+				"implantAnalogCost": {
+					"type": "integer",
+					"description": "Order implantAnalog Cost ",
+					"example": 100
+				},
+				"impressionCost": {
+					"type": "integer",
+					"description": "Order impression Cost ",
+					"example": 100
+				},
+				"shippingHandlingCost": {
+					"type": "integer",
+					"description": "Order shippingHandling Cost ",
+					"example": 100
+				},
+				"restRedo": {
+					"type": "integer",
+					"description": "is redo ",
+					"example": 0
+				},
+				"restRush": {
+					"type": "integer",
+					"description": "is Rush ",
+					"example": 0
+				},
+				"statusId": {
+					"type": "integer",
+					"description": "status id ",
+					"example": 6
+				},
+				"HistoryRecord": {
+					"type": "string",
+					"description": "Description ",
+					"example": "Note Record"
+				},
+				"PendingReason": {
+					"type": "string",
+					"description": "Description ",
+					"example": "Reason for pending"
+				},
+				"pending": {
+					"type": "integer",
+					"description": "is Pending ",
+					"example": 0
+				},
+				"orderId": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 33543
+				},
+				"restorationZeroReason_otherOption": {
+					"type": "string",
+					"description": "restorationZeroReason_otherOption ",
+					"example": "Reason"
+				},
+				"restorationZeroReason": {
+					"type": "string",
+					"description": "restorationZeroReason ",
+					"example": "Reason"
+				},
+				"files": {
+					"type": "string",
+					"description": "files for internal history ",
+					"example": "List of files Paths"
+				}
+			}
+		},
+		"RestorationQuickEditResponse": {
+			"required": ["updateRest"],
+			"properties": {
+				"internalHistory": {
+					"$ref": "#/definitions/OrderInternalHistory"
+				},
+				"updateRest": {
+					"$ref": "#/definitions/RestorationOrderReturn"
+				}
+			}
+		},
+		"ReportQuickEditBody": {
+			"required": ["dcmpat", "dcmsex", "dcmdob"],
+			"properties": {
+				"xcomment": {
+					"type": "string",
+					"description": "client Comment ",
+					"example": "comment"
+				},
+				"sName": {
+					"type": "string",
+					"description": "Scan center ID ",
+					"example": "41414"
+				},
+				"dName": {
+					"type": "string",
+					"description": "Doctor ID ",
+					"example": "22425"
+				},
+				"radName": {
+					"type": "string",
+					"description": "Radiology ID ",
+					"example": "34242"
+				},
+				"dcmpat": {
+					"type": "string",
+					"description": "Patient name ",
+					"example": "Ahmad"
+				},
+				"dcmsex": {
+					"type": "string",
+					"description": "Patient Gender ",
+					"example": "Female"
+				},
+				"dcmrel": {
+					"type": "string",
+					"description": "Relevant History ",
+					"example": "Note"
+				},
+				"dcmdob": {
+					"type": "string",
+					"description": "Patient Date of birth ",
+					"example": "1999-12-12"
+				},
+				"cost": {
+					"type": "integer",
+					"description": "Order Cost ",
+					"example": 100
+				},
+				"ImPlanned": {
+					"type": "integer",
+					"description": "ImPlanned ",
+					"example": 1
+				},
+				"EvImplant": {
+					"type": "integer",
+					"description": "EvImplant ",
+					"example": 1
+				},
+				"SiEvaluation": {
+					"type": "integer",
+					"description": "SiEvaluation ",
+					"example": 1
+				},
+				"RuPathology": {
+					"type": "integer",
+					"description": "RuPathology ",
+					"example": 1
+				},
+				"airWayEvaluation": {
+					"type": "integer",
+					"description": "airWayEvaluation ",
+					"example": 1
+				},
+				"bReport": {
+					"type": "integer",
+					"description": "bReport ",
+					"example": 1
+				},
+				"repRedo": {
+					"type": "integer",
+					"description": "is redo ",
+					"example": 0
+				},
+				"repRush": {
+					"type": "integer",
+					"description": "is Rush ",
+					"example": 0
+				},
+				"statusId": {
+					"type": "integer",
+					"description": "status id ",
+					"example": 6
+				},
+				"exclude": {
+					"type": "string",
+					"description": "exclude ",
+					"example": "on"
+				},
+				"orderId": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 33543
+				},
+				"ReportZeroReason_otherOption": {
+					"type": "string",
+					"description": "ReportZeroReason_otherOption ",
+					"example": "Reason"
+				},
+				"reportZeroReason": {
+					"type": "string",
+					"description": "ReportZeroReason ",
+					"example": "Reason"
+				}
+			}
+		},
+		"ReportQuickEditResponse": {
+			"required": ["updateRep"],
+			"properties": {
+				"updateRep": {
+					"$ref": "#/definitions/ReportOrderReturn"
+				}
+			}
+		},
+		"ModelQuickEditBody": {
+			"required": ["intraoral", "impressionScans"],
+			"properties": {
+				"xComment": {
+					"type": "string",
+					"description": "client Comment ",
+					"example": "Comment"
+				},
+				"cost": {
+					"type": "integer",
+					"description": "Order Cost ",
+					"example": 100
+				},
+				"intraoral": {
+					"type": "integer",
+					"description": "Is Intraoral ",
+					"example": 1
+				},
+				"impressionScans": {
+					"type": "integer",
+					"description": "Impression Scans ",
+					"example": 0
+				},
+				"operator": {
+					"type": "integer",
+					"description": "Operator ID ",
+					"example": 50
+				},
+				"redo": {
+					"type": "integer",
+					"description": "is redo ",
+					"example": 0
+				},
+				"rush": {
+					"type": "integer",
+					"description": "is Rush ",
+					"example": 0
+				},
+				"statusId": {
+					"type": "integer",
+					"description": "status id ",
+					"example": 6
+				},
+				"HistoryRecord": {
+					"type": "string",
+					"description": "Description ",
+					"example": "Note Record"
+				},
+				"PendingReason": {
+					"type": "string",
+					"description": "Description ",
+					"example": "Reason for pending"
+				},
+				"pending": {
+					"type": "integer",
+					"description": "is Pending ",
+					"example": 0
+				},
+				"orderId": {
+					"type": "integer",
+					"description": "Description ",
+					"example": 33543
+				},
+				"files": {
+					"type": "string",
+					"description": "files for internal history ",
+					"example": "List of files Paths"
+				}
+			}
+		},
+		"ModelQuickEditResponse": {
+			"required": ["updateModel"],
+			"properties": {
+				"internalHistory": {
+					"$ref": "#/definitions/OrderInternalHistory"
+				},
+				"updateModel": {
+					"$ref": "#/definitions/ModelOrderReturn"
+				}
+			}
+		}
+	},
+	"responses": {},
+	"parameters": {},
+	"tags": [
+		{
+			"name": "Archived packages",
+			"description": ""
+		},
+		{
+			"name": "Orders",
+			"description": "Orders Re"
+		}
+	]
+}
